@@ -351,10 +351,15 @@ void initializeDisplayedFileNames(const std::vector<CharArray>& list, char displ
 
 
 void defineNewFileNameGrid() {
-for (byte i = 0; i < sizeof(newFileNameGrid); i++){
-  newFileNameGrid[i] = {i*6, 25};
+    // Calculate the number of elements in the array
+    constexpr size_t gridSize = sizeof(newFileNameGrid) / sizeof(Grid);
+
+    // Populate the array
+    for (size_t i = 0; i < gridSize; i++) {
+        newFileNameGrid[i] = {(byte)(i * 6), 25};  // Explicit cast to byte for safe narrowing
+    }
 }
-}
+
 
 
 
