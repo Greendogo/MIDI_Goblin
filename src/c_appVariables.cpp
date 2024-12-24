@@ -46,7 +46,7 @@ unsigned long nextArpeggiatorTime = 0;
 
 //arpnote-------------------------------
 
-extern unsigned long arpNoteNextSequenceTime = 0;
+unsigned long arpNoteNextSequenceTime = 0;
 byte arpNoteSequenceNotePosition = 0;
 unsigned long arpNoteStartTime = 0;
 byte arpNoteNotePlaying = 0;
@@ -123,7 +123,7 @@ int8_t seqSwangMax = 75;
 int8_t seqSwang[32];
 bool seqStarted = false;
 byte seqPlayPosition = 0;
-extern bool sequencerUpdated = false;
+bool sequencerUpdated = false;
 bool seqAppStatus = false;
 byte seqRecordMode = 0;
 byte seqRecordModeMin = 0;
