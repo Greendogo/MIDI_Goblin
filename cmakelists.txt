@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 3.20)
+
+# Project Name
+project(MIDI_Goblin LANGUAGES CXX)
+
+# Set the C++ Standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Define Source Files
+file(GLOB_RECURSE SOURCES
+    "${CMAKE_SOURCE_DIR}/*.cpp"
+    "${CMAKE_SOURCE_DIR}/*.ino"
+    "${CMAKE_SOURCE_DIR}/*.h"
+)
+
+# Exclude the build directory and compiled artifacts
+list(FILTER SOURCES EXCLUDE REGEX ".*build/.*")
+
+# Include Arduino Core and Libraries
+set(ARDUINO_SDK_PATH $ENV{ARDUINO_SDK_PATH})
+set(PLATFORMIO_CMAKE_PATH ${ARDUINO_SDK_PATH}/tools/cmake/PlatformIO.cmake)
+
+# Include PlatformIO
+include(${PLATFORMIO_CMAKE_PATH})
+
+# Specify Target Board
+set(PLATFORMIO_ENV esp32dev) # Adjust this for your board
+set(PLATFORMIO_FRAMEWORK arduino)
+
+# Create the Executable
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Set Target Properties for PlatformIO
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    PLATFORMIO_ENV ${PLATFORMIO_ENV}
+    PLATFORMIO_FRAMEWORK ${PLATFORMIO_FRAMEWORK}
+)
+
+# Add Include Paths
+include_directories(${ARDUINO_SDK_PATH}/libraries)
+include_directories(${ARDUINO_SDK_PATH}/cores/arduino)
+
+# Link Required Libraries
+target_link_libraries(${PROJECT_NAME}
+    ${ARDUINO_SDK_PATH}/libraries/Adafruit_GFX
+    ${ARDUINO_SDK_PATH}/libraries/Adafruit_SH110X
+    ${ARDUINO_SDK_PATH}/libraries/MIDI
+    ${ARDUINO_SDK_PATH}/libraries/SD
+    ${ARDUINO_SDK_PATH}/libraries/SPI
+    ${ARDUINO_SDK_PATH}/libraries/Wire
+)
