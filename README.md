@@ -1,6 +1,6 @@
 # MIDI Goblin
 
-MIDI Goblin is an open-source hardware MIDI controller designed to enhance MIDI capabilities for musicians and producers. It provides patch management, arpeggiation, sequencing, and other MIDI features for synthesizers and controllers that lack advanced MIDI functionality.
+MIDI Goblin is an open-source hardware MIDI controller designed and developed by Andrew Crawford to enhance MIDI capabilities for musicians and producers. It provides patch management, arpeggiation, sequencing, and other MIDI features for synthesizers and controllers that lack advanced MIDI functionality. It was launched on Kickstarter to address the limitations of synthesizers and MIDI controllers that lack features like patch storage, arpeggiation, and advanced sequencing. 
 
 ## Features
 - **Patch Saver**: Save and load patches for MIDI synthesizers and controllers.
