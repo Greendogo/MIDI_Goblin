@@ -15,6 +15,8 @@ unsigned long calculateIncrementTime() {
             return 1000 / max(lfoFreq, (byte)1);
 
         // Other waveforms...
+        default:
+            return 1000 / max(lfoFreq, (byte)1);
     }
 }
 void calculateLfoValueDepth(int &minValue, int &maxValue) {
