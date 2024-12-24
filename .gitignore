@@ -1,0 +1,44 @@
+# PlatformIO build and temporary files
+.pio/
+build/
+
+# Compiled binary files
+*.bin
+*.elf
+*.hex
+*.map
+*.partitions.bin
+
+# Temporary and log files
+*.log
+*.tmp
+*.swp
+
+# Arduino-specific files
+*.ino.cpp
+*.ino.d
+*.ino.s
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*.suo
+*.user
+*.sln
+*.DS_Store
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup files
+*~
+*.bak
+*.old
