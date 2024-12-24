@@ -25,7 +25,10 @@ MIDI Goblin is an open-source hardware MIDI controller designed and developed by
   - Wire
   - SD
 
-### Installation Instructions
+### Installation Instructions using Android IDE
+TBD
+
+### Installation Instructions using PlatformIO
 Before building the project, ensure you have **PlatformIO** installed. PlatformIO simplifies dependency management and builds for embedded systems.
 
 #### Install PlatformIO via pip
